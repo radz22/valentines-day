@@ -99,13 +99,11 @@ const ValentinesPage = () => {
             } `}
           >
             <button
-              onMouseEnter={handleHover}
               className={` text-4xl bg-red-700	cursor-pointer			 py-4 px-4 text-white w-56	font-semibold  max-xl:text-3xl  max-sm:text-2xl	max-sm:w-44	 max-[430px]:text-xl `}
             >
               No
             </button>
           </div>
-
           <div
             onClick={handleHover}
             className={`  hidden max-[530px]:block ${
@@ -113,7 +111,6 @@ const ValentinesPage = () => {
             } `}
           >
             <button
-              onMouseEnter={handleHover}
               className={` text-4xl bg-red-700	cursor-pointer			 py-4 px-4 text-white w-56	font-semibold  max-xl:text-3xl  max-sm:text-2xl	max-sm:w-44	 max-[430px]:text-xl `}
             >
               No
