@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const ValentinesPage = () => {
-  const [value, setValue] = useState<string>("top-[75%]");
+  const [value, setValue] = useState<string>("left-[44%]");
   const [done, setDone] = useState<boolean>(false);
-
+  const [hover, setHover] = useState(false);
   const position = [
     "top-[0%] ",
     "bottom-[0%]",
@@ -57,6 +57,7 @@ const ValentinesPage = () => {
 
   const handleHover = () => {
     handleRandom();
+    setHover(true);
   };
 
   const handleDone = () => {
@@ -71,7 +72,7 @@ const ValentinesPage = () => {
           <div className="flex items-center justify-center">
             <img
               src="https://media.tenor.com/y1et82rwFeAAAAAi/bear-love-you.gif "
-              className=" w-80			h-80	max-xl:w-72	 max-xl:h-72	max-sm:w-60	max-sm:h-60	 max-[430px]:w-52	  max-[430px]:h-52	"
+              className=" w-80			h-80	max-xl:w-72	 max-xl:h-72	max-sm:w-60	max-sm:h-60	 max-[430px]:w-52	max-md:w-48	  max-[430px]:h-52	"
             />
           </div>
           <div className="mt-10">
@@ -81,20 +82,25 @@ const ValentinesPage = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center mt-10 ">
+        <div className="flex items-center justify-center mt-10  gap-10 max-[430px]:flex-col">
           <div>
             <button
-              className="text-4xl bg-lime-500	 py-4 px-4 text-white w-56	font-semibold cursor-pointer	 	max-xl:text-3xl	max-sm-[2px] max-[430px]:text-xl	"
+              className="text-4xl bg-lime-500	 py-4 px-4 text-white w-56	font-semibold cursor-pointer	 	max-xl:text-3xl	max-sm:text-2xl	max-sm:w-44	 max-[430px]:text-xl	"
               onClick={handleDone}
             >
               Yes
             </button>
           </div>
 
-          <div className={` absolute ${value}`}>
+          <div
+            onMouseEnter={handleHover}
+            className={`${
+              hover ? `absolute ${value}` : "flex items-center justify-center"
+            }`}
+          >
             <button
               onMouseEnter={handleHover}
-              className={` text-4xl bg-red-700	cursor-pointer			 py-4 px-4 text-white w-56	font-semibold  max-xl:text-3xl max-[430px]:text-xl `}
+              className={` text-4xl bg-red-700	cursor-pointer			 py-4 px-4 text-white w-56	font-semibold  max-xl:text-3xl  max-sm:text-2xl	max-sm:w-44	 max-[430px]:text-xl `}
             >
               No
             </button>
@@ -110,11 +116,11 @@ const ValentinesPage = () => {
         <div>
           <img
             src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif "
-            className=" w-96		h-96 max-xl:w-72	 max-xl:h-72	max-sm:w-60	max-sm:h-60	 max-[430px]:w-52	  max-[430px]:h-52"
+            className=" w-96	h-96 max-xl:w-72	 max-xl:h-72	max-sm:w-60	max-sm:h-60	 max-[430px]:w-52	  max-[430px]:h-52 max-md:w-48"
           />
         </div>
         <div className="mt-20">
-          <h1 className="ml-20 text-5xl font-bold	 font-serif max-xl:text-3xl	text-center  max-[430px]:text-xl">
+          <h1 className=" text-5xl font-bold	 font-serif max-xl:text-3xl	text-center  max-[430px]:text-xl">
             Ok See You !! 💘{" "}
           </h1>
         </div>
