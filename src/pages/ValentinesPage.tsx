@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ValentinesPage = () => {
   const [value, setValue] = useState<string>("top-[75%]");
